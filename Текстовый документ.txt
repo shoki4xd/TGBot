@@ -1,0 +1,18 @@
+create table anketa(
+	id integer primary key,
+	user_name varchar(50) not null,
+	years varchar(10) not null,
+	college varchar(100) not null,
+	description varchar(500) null,
+	image varchar(500) not null
+);
+
+
+create table College (
+	id serial primary KEY,
+	college varchar (50)
+);
+
+ALTER TABLE anketa ALTER COLUMN college TYPE int USING college::integer;
+
+alter table anketa add constraint college_fk foreign key (college) references college(id);
