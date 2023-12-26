@@ -16,3 +16,13 @@ create table College (
 ALTER TABLE anketa ALTER COLUMN college TYPE int USING college::integer;
 
 alter table anketa add constraint college_fk foreign key (college) references college(id);
+alter table anketa add gender_id int  
+
+
+create table gender (
+	id serial primary key,
+	gender_name varchar(50)
+	
+	)
+	
+	alter table anketa add constraint genderfk foreign key (gender_id) references gender(id)
